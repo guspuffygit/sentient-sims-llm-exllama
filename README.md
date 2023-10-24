@@ -1,3 +1,31 @@
+# Sentient Sims LLM ExLlama
+
+This is a fork of exllama for use with the Sentient Sims Mod.
+
+Currently the best model to be used with Sentient Sims is https://huggingface.co/TheBloke/MythoMax-L2-13B-GPTQ/tree/gptq-4bit-32g-actorder_True
+
+I have tested MANY other models but this has been the only one proven to follow the instructions for storytelling correctly as needed by the Sentient Sims Mod.
+
+*** NOTE ***
+This has only been testing in Linux/WSL 2 and requires a 3090/4090 GPU
+
+## Steps To Get Running
+
+1. Download https://huggingface.co/TheBloke/MythoMax-L2-13B-GPTQ/tree/gptq-4bit-32g-actorder_True locally into a folder
+1. Clone this repo
+1. Install the requirements.txt into a Conda or venv environment
+1. pip install -r requirements.txt
+1. pip install -r requirements-web.txt
+1. Run the api using the folder path where you downloaded, replace the path I have using the path to where you downloaded the model
+1. python sentient_sims_api.py --name "local" --model_path /data/models/TheBloke_MythoMax-L2-13B-GPTQ_4bit --listen
+1. The application should now be running on port 5000
+1. Open the Sentient Sims App -> Settings
+1. In the dropdown select Custom Remote/Local AI
+1. Type in `http://localhost:5000`
+1. Navigate back to the home screen
+1. Sentient Sims AI Status: OK and should have 1 worker "local"
+1. You are ready to play and all generations are local!
+
 # ExLlama
 
 A standalone Python/C++/CUDA implementation of Llama for use with 4-bit GPTQ weights, designed to be fast and
