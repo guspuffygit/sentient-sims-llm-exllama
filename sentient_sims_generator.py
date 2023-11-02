@@ -1,4 +1,5 @@
 import glob
+import json
 import os
 import threading
 import time
@@ -33,6 +34,13 @@ class SentientSimsGenerator:
         self.config.max_input_len = max_token_length
         self.config.max_attention_size = max_token_length ** 2
         self.config.alpha_value = 1000000
+
+        with open(model_config_path, 'r') as config_json:
+            data = json.load(config_json)
+            if '_name_or_path' in data:
+                self.config.name = data['_name_or_path']
+            else:
+                self.config.name = 'NA'
 
         self.model = ExLlama(self.config)  # create ExLlama instance and load the weights
         self.tokenizer = ExLlamaTokenizer(tokenizer_path)  # create tokenizer from tokenizer model file
