@@ -1,3 +1,4 @@
+import os
 import uuid
 
 import grpc
@@ -14,8 +15,11 @@ worker_id = str(uuid.uuid4())
 gpu_name = generator.get_gpu_name()
 model_name = generator.get_model_name()
 
+ssl_cert = 'sentient-simulations-grpc.crt'
 
 def run():
+    if not os.path.exists(ssl_cert):
+        raise FileNotFoundError(f"The file {ssl_cert} does not exist.")
     while True:
         try:
             run_worker()
@@ -25,7 +29,7 @@ def run():
 
 
 def run_worker():
-    credentials = grpc.ssl_channel_credentials(open('sentient-simulations-grpc.crt', 'rb').read())
+    credentials = grpc.ssl_channel_credentials(open(ssl_cert, 'rb').read())
 
     with grpc.secure_channel('ai.sentientsimulations.com:50051', credentials=credentials) as channel:
         print('Connected to the server')
