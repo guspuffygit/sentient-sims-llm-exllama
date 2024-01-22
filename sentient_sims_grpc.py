@@ -3,8 +3,8 @@ import uuid
 import grpc
 from grpc._channel import _InactiveRpcError
 
-from py.ai_pb2 import WorkRequest, WorkerInfo, WorkResponse
-from py.ai_pb2_grpc import WorkerPoolStub
+from ai_pb2 import WorkRequest, WorkerInfo, WorkResponse
+from ai_pb2_grpc import WorkerPoolStub
 from sentient_sims_api import generator, startApi, args, worker_name
 import time
 import threading
