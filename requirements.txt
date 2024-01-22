@@ -8,3 +8,4 @@ flask~=2.3.2
 waitress~=2.1.2
 asyncio~=3.4.3
 websockets~=11.0.3
+numpy==1.26.3
