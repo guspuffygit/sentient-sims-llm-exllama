@@ -76,6 +76,7 @@ print(f"Starting worker: {worker_name}, type: {generator.get_gpu_name()}, model:
 
 def startApi(listen: bool):
     print('Starting API Server')
+
     if listen:
         print('Listening on local network on port 5000')
         serve(app=app, host="0.0.0.0", port=5000)
