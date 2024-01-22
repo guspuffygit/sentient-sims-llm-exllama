@@ -3,3 +3,4 @@ waitress==2.1.2
 python-jose==3.3.0
 python-jwt==4.0.0
 websocket-client==1.6.1
+grpcio-tools==1.60.0
