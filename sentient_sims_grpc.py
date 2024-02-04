@@ -31,7 +31,7 @@ def run():
 def run_worker():
     credentials = grpc.ssl_channel_credentials(open(ssl_cert, 'rb').read())
 
-    with grpc.secure_channel('ai.sentientsimulations.com:50051', credentials=credentials) as channel:
+    with grpc.secure_channel('ai.sentientsimulations.com:50050', credentials=credentials) as channel:
         print('Connected to the server')
         worker_pool = WorkerPoolStub(channel)
 
@@ -42,7 +42,7 @@ def run_worker():
                     workerName=worker_name,
                     gpuCount=1,
                     gpuType=gpu_name,
-                ), timeout=22)
+                ), timeout=5)
                 print(f"request: {work_request.task}")
                 output = generator.generate(prompt=work_request.task, max_new_tokens=100)
                 worker_pool.CompleteWork(WorkResponse(text=output, taskid=work_request.taskid))
