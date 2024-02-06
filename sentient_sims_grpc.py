@@ -42,13 +42,13 @@ def run_worker():
                     workerName=worker_name,
                     gpuCount=1,
                     gpuType=gpu_name,
-                ), timeout=5)
+                ), timeout=15)
                 print(f"request: {work_request.task}")
                 output = generator.generate(prompt=work_request.task, max_new_tokens=100)
                 worker_pool.CompleteWork(WorkResponse(text=output, taskid=work_request.taskid))
                 print(f"done with request")
             except _InactiveRpcError as e:
-                if e.details() == 'no work available':
+                if e.details() == 'no work available' or e.code() == grpc.StatusCode.DEADLINE_EXCEEDED:
                     continue
                 print(f"RPC error: {e}")
                 time.sleep(5)
