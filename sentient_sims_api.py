@@ -8,12 +8,14 @@ from sentient_sims_generator import SentientSimsGenerator
 parser = argparse.ArgumentParser(description="Sentient Sims API")
 parser.add_argument("--name", type=str, required=True, help="Worker name")
 parser.add_argument("--model_path", type=str, required=True, help="Path to model folder")
+parser.add_argument("--port", type=int, default=5000, help="Port number (default: 5000)")
 parser.add_argument("--listen", action="store_true", required=False, help="Allow connection outside of localhost")
 
 # Parse the command-line arguments
 args = parser.parse_args()
 worker_name = args.name
 model_path = args.model_path
+port = args.port
 
 app = Flask(__name__)
 generator = SentientSimsGenerator(model_path=model_path, max_token_length=4096)
@@ -78,11 +80,11 @@ def startApi(listen: bool):
     print('Starting API Server')
 
     if listen:
-        print('Listening on local network on port 5000')
-        serve(app=app, host="0.0.0.0", port=5000)
+        print(f'Listening on local network on port {port}')
+        serve(app=app, host="0.0.0.0", port=port)
     else:
-        print('Listening on localhost on port 5000')
-        serve(app=app, port=5000)
+        print(f'Listening on localhost on port {port}')
+        serve(app=app, port=port)
 
 if __name__ == '__main__':
     startApi(args.listen)
