@@ -9,6 +9,8 @@ from ai_pb2_grpc import WorkerPoolStub
 from sentient_sims_api import generator, startApi, args, worker_name
 import time
 import threading
+from sentient_sims_generator import TooManyTokensError
+from sentient_sims_logger import ss_logger
 
 worker_id = str(uuid.uuid4())
 
@@ -24,7 +26,7 @@ def run():
         try:
             run_worker()
         except:
-            print('Failed to connect to the grpc server')
+            ss_logger.error('Failed to connect to the grpc server')
             time.sleep(5)
 
 
@@ -32,7 +34,7 @@ def run_worker():
     credentials = grpc.ssl_channel_credentials(open(ssl_cert, 'rb').read())
 
     with grpc.secure_channel('ai.sentientsimulations.com:50050', credentials=credentials) as channel:
-        print('Connected to the server')
+        ss_logger.info('Connected to the server')
         worker_pool = WorkerPoolStub(channel)
 
         while True:
@@ -43,22 +45,28 @@ def run_worker():
                     gpuCount=1,
                     gpuType=gpu_name,
                 ), timeout=15)
-                print(f"request: {work_request.task}")
-                output = generator.generate(prompt=work_request.task, max_new_tokens=100)
-                worker_pool.CompleteWork(WorkResponse(text=output, taskid=work_request.taskid))
-                print(f"done with request")
             except _InactiveRpcError as e:
                 if e.details() == 'no work available' or e.code() == grpc.StatusCode.DEADLINE_EXCEEDED:
                     continue
-                print(f"RPC error: {e}")
+                ss_logger.error(f"RPC error: {e}")
                 time.sleep(5)
             except Exception as e:
-                print(f"Unknown exception: {e}")
+                ss_logger.error(f"Unknown exception getting work: {e}")
                 time.sleep(5)
+
+            try:
+                output = generator.generate(prompt=work_request.task, max_new_tokens=100)
+                worker_pool.CompleteWork(WorkResponse(text=output, taskid=work_request.taskid))
+                ss_logger.debug(f"done with request")
+            except TooManyTokensError as e:
+                ss_logger.error(f'Too many tokens?\n{str(e)}')
+                worker_pool.CompleteWork(WorkResponse(text=output, taskid=work_request.taskid))
+            except Exception as e:
+                ss_logger.error()
 
 
 if __name__ == "__main__":
-    print('Starting grpc client')
+    ss_logger.info('Starting grpc client')
     websocket_thread = threading.Thread(target=run)
     websocket_thread.start()
 

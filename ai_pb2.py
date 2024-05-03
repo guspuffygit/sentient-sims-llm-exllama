@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x08\x61i.proto\x12\x02pb\"U\n\nWorkerInfo\x12\x10\n\x08workerId\x18\x01 \x01(\t\x12\x10\n\x08gpuCount\x18\x02 \x01(\x05\x12\x0f\n\x07gpuType\x18\x03 \x01(\t\x12\x12\n\nworkerName\x18\x04 \x01(\t\"\x16\n\x03\x41\x63k\x12\x0f\n\x07success\x18\x01 \x01(\x08\"+\n\x0bWorkRequest\x12\x0c\n\x04task\x18\x01 \x01(\t\x12\x0e\n\x06taskid\x18\x02 \x01(\t\",\n\x0cWorkResponse\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x0e\n\x06taskid\x18\x02 \x01(\t\"\x11\n\x0fWorkResponseAck2p\n\nWorkerPool\x12)\n\x04Work\x12\x0e.pb.WorkerInfo\x1a\x0f.pb.WorkRequest\"\x00\x12\x37\n\x0c\x43ompleteWork\x12\x10.pb.WorkResponse\x1a\x13.pb.WorkResponseAck\"\x00\x42\x34Z2sentientsimulations.com/sentient-sims-ai-server/pbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x08\x61i.proto\x12\x02pb\"U\n\nWorkerInfo\x12\x10\n\x08workerId\x18\x01 \x01(\t\x12\x10\n\x08gpuCount\x18\x02 \x01(\x05\x12\x0f\n\x07gpuType\x18\x03 \x01(\t\x12\x12\n\nworkerName\x18\x04 \x01(\t\"\x16\n\x03\x41\x63k\x12\x0f\n\x07success\x18\x01 \x01(\x08\"+\n\x0bWorkRequest\x12\x0c\n\x04task\x18\x01 \x01(\t\x12\x0e\n\x06taskid\x18\x02 \x01(\t\"J\n\x0cWorkResponse\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x0e\n\x06taskid\x18\x02 \x01(\t\x12\x12\n\x05\x65rror\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x08\n\x06_error\"\x11\n\x0fWorkResponseAck2p\n\nWorkerPool\x12)\n\x04Work\x12\x0e.pb.WorkerInfo\x1a\x0f.pb.WorkRequest\"\x00\x12\x37\n\x0c\x43ompleteWork\x12\x10.pb.WorkResponse\x1a\x13.pb.WorkResponseAck\"\x00\x42\x34Z2sentientsimulations.com/sentient-sims-ai-server/pbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -29,9 +29,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_WORKREQUEST']._serialized_start=127
   _globals['_WORKREQUEST']._serialized_end=170
   _globals['_WORKRESPONSE']._serialized_start=172
-  _globals['_WORKRESPONSE']._serialized_end=216
-  _globals['_WORKRESPONSEACK']._serialized_start=218
-  _globals['_WORKRESPONSEACK']._serialized_end=235
-  _globals['_WORKERPOOL']._serialized_start=237
-  _globals['_WORKERPOOL']._serialized_end=349
+  _globals['_WORKRESPONSE']._serialized_end=246
+  _globals['_WORKRESPONSEACK']._serialized_start=248
+  _globals['_WORKRESPONSEACK']._serialized_end=265
+  _globals['_WORKERPOOL']._serialized_start=267
+  _globals['_WORKERPOOL']._serialized_end=379
 # @@protoc_insertion_point(module_scope)

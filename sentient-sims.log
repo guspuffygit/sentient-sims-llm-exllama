@@ -1,0 +1,117 @@
+2024-05-03 09:42:02,057 - sentient-sims - INFO - Starting worker: enterprise3, type: NVIDIA GeForce RTX 3090, model: mythomax-L2-13b
+2024-05-03 09:42:02,057 - sentient-sims - INFO - Starting grpc client
+2024-05-03 09:42:02,057 - sentient-sims - INFO - Starting API Server
+2024-05-03 09:42:02,057 - sentient-sims - INFO - Listening on localhost on port 5002
+2024-05-03 09:42:02,061 - sentient-sims - INFO - Connected to the server
+2024-05-03 09:42:14,324 - sentient-sims - INFO - 23.67 tk/s in 4.27 seconds
+2024-05-03 09:42:14,355 - sentient-sims - DEBUG - done with request
+2024-05-03 09:43:39,061 - sentient-sims - INFO - Starting worker: enterprise3, type: NVIDIA GeForce RTX 3090, model: mythomax-L2-13b
+2024-05-03 09:43:39,062 - sentient-sims - INFO - Starting grpc client
+2024-05-03 09:43:39,062 - sentient-sims - INFO - Starting API Server
+2024-05-03 09:43:39,062 - sentient-sims - INFO - Listening on localhost on port 5002
+2024-05-03 09:43:39,065 - sentient-sims - INFO - Connected to the server
+2024-05-03 09:44:20,780 - sentient-sims - INFO - 33.17 tk/s in 2.74 seconds
+2024-05-03 09:44:24,242 - sentient-sims - INFO - 54.52 tk/s in 1.67 seconds
+2024-05-03 09:44:26,408 - sentient-sims - INFO - 53.38 tk/s in 1.7 seconds
+2024-05-03 09:44:37,235 - sentient-sims - INFO - 40.83 tk/s in 2.23 seconds
+2024-05-03 09:44:55,537 - sentient-sims - INFO - 31.62 tk/s in 2.88 seconds
+2024-05-03 09:45:00,278 - sentient-sims - ERROR - Total tokens is too high, total tokens: 7195
+2024-05-03 09:45:00,278 - sentient-sims - ERROR - Total tokens is too high, total tokens: 7195
+2024-05-03 09:45:00,278 - sentient-sims - ERROR - Traceback (most recent call last):
+  File "/home/guspuffy/projects/sentient-sims-llm-exllama/sentient_sims_api.py", line 63, in get_prompt_value
+    output = generator.generate(prompt=prompt, max_new_tokens=max_new_tokens)
+  File "/home/guspuffy/projects/sentient-sims-llm-exllama/sentient_sims_generator.py", line 88, in generate
+    raise TooManyTokensError(message)
+sentient_sims_generator.TooManyTokensError: Total tokens is too high, total tokens: 7195
+
+2024-05-03 09:49:43,360 - sentient-sims - INFO - 29.59 tk/s in 3.38 seconds
+2024-05-03 09:49:43,389 - sentient-sims - DEBUG - done with request
+2024-05-03 09:50:37,208 - sentient-sims - INFO - 30.33 tk/s in 3.3 seconds
+2024-05-03 09:50:37,236 - sentient-sims - DEBUG - done with request
+2024-05-03 09:51:39,347 - sentient-sims - INFO - 29.55 tk/s in 3.32 seconds
+2024-05-03 09:51:39,376 - sentient-sims - DEBUG - done with request
+2024-05-03 09:51:52,995 - sentient-sims - INFO - 30.55 tk/s in 3.27 seconds
+2024-05-03 09:51:53,023 - sentient-sims - DEBUG - done with request
+2024-05-03 09:52:01,617 - sentient-sims - INFO - 31.59 tk/s in 3.1 seconds
+2024-05-03 09:52:01,645 - sentient-sims - DEBUG - done with request
+2024-05-03 09:53:54,917 - sentient-sims - INFO - 31.26 tk/s in 3.2 seconds
+2024-05-03 09:53:54,945 - sentient-sims - DEBUG - done with request
+2024-05-03 09:55:52,405 - sentient-sims - INFO - 29.54 tk/s in 3.39 seconds
+2024-05-03 09:55:52,433 - sentient-sims - DEBUG - done with request
+2024-05-03 09:56:13,214 - sentient-sims - INFO - 30.22 tk/s in 3.31 seconds
+2024-05-03 09:56:13,243 - sentient-sims - DEBUG - done with request
+2024-05-03 09:56:53,882 - sentient-sims - INFO - 31.01 tk/s in 3.22 seconds
+2024-05-03 09:56:53,910 - sentient-sims - DEBUG - done with request
+2024-05-03 09:58:18,734 - sentient-sims - INFO - 30.29 tk/s in 3.23 seconds
+2024-05-03 09:58:18,763 - sentient-sims - DEBUG - done with request
+2024-05-03 09:58:41,461 - sentient-sims - INFO - 30.58 tk/s in 3.3 seconds
+2024-05-03 09:58:41,490 - sentient-sims - DEBUG - done with request
+2024-05-03 09:59:33,081 - sentient-sims - INFO - 29.95 tk/s in 3.37 seconds
+2024-05-03 09:59:33,110 - sentient-sims - DEBUG - done with request
+2024-05-03 09:59:50,211 - sentient-sims - INFO - 31.2 tk/s in 3.21 seconds
+2024-05-03 09:59:50,239 - sentient-sims - DEBUG - done with request
+2024-05-03 10:03:11,465 - sentient-sims - INFO - 30.83 tk/s in 3.28 seconds
+2024-05-03 10:03:11,494 - sentient-sims - DEBUG - done with request
+2024-05-03 10:05:25,760 - sentient-sims - INFO - 29.62 tk/s in 3.38 seconds
+2024-05-03 10:05:25,789 - sentient-sims - DEBUG - done with request
+2024-05-03 10:08:29,192 - sentient-sims - INFO - 29.59 tk/s in 3.38 seconds
+2024-05-03 10:08:29,220 - sentient-sims - DEBUG - done with request
+2024-05-03 10:12:31,661 - sentient-sims - INFO - 29.99 tk/s in 3.33 seconds
+2024-05-03 10:12:31,689 - sentient-sims - DEBUG - done with request
+2024-05-03 10:13:23,551 - sentient-sims - INFO - 30.89 tk/s in 3.27 seconds
+2024-05-03 10:13:23,580 - sentient-sims - DEBUG - done with request
+2024-05-03 10:14:52,807 - sentient-sims - INFO - 29.97 tk/s in 3.37 seconds
+2024-05-03 10:14:52,835 - sentient-sims - DEBUG - done with request
+2024-05-03 10:16:16,268 - sentient-sims - INFO - 30.2 tk/s in 3.31 seconds
+2024-05-03 10:16:16,297 - sentient-sims - DEBUG - done with request
+2024-05-03 10:25:56,997 - sentient-sims - INFO - 30.36 tk/s in 3.33 seconds
+2024-05-03 10:25:57,026 - sentient-sims - DEBUG - done with request
+2024-05-03 10:28:20,771 - sentient-sims - INFO - 29.56 tk/s in 3.38 seconds
+2024-05-03 10:28:20,799 - sentient-sims - DEBUG - done with request
+2024-05-03 10:30:32,656 - sentient-sims - INFO - 35.2 tk/s in 2.87 seconds
+2024-05-03 10:30:32,685 - sentient-sims - DEBUG - done with request
+2024-05-03 10:35:56,883 - sentient-sims - INFO - 30.2 tk/s in 3.34 seconds
+2024-05-03 10:35:56,911 - sentient-sims - DEBUG - done with request
+2024-05-03 10:40:07,837 - sentient-sims - INFO - Starting worker: enterprise3, type: NVIDIA GeForce RTX 3090, model: mythomax-L2-13b
+2024-05-03 10:40:07,837 - sentient-sims - INFO - Starting API Server
+2024-05-03 10:40:07,837 - sentient-sims - INFO - Listening on localhost on port 5002
+2024-05-03 10:40:21,656 - sentient-sims - INFO - 34.15 tk/s in 2.67 seconds
+2024-05-03 10:40:37,379 - sentient-sims - ERROR - Total tokens is too high, total tokens: 12066
+2024-05-03 10:40:37,380 - sentient-sims - ERROR - Total tokens is too high, total tokens: 12066
+2024-05-03 10:40:37,380 - sentient-sims - ERROR - Traceback (most recent call last):
+  File "/home/guspuffy/projects/sentient-sims-llm-exllama/sentient_sims_api.py", line 63, in get_prompt_value
+    output = generator.generate(prompt=prompt, max_new_tokens=max_new_tokens)
+  File "/home/guspuffy/projects/sentient-sims-llm-exllama/sentient_sims_generator.py", line 88, in generate
+    raise TooManyTokensError(message)
+sentient_sims_generator.TooManyTokensError: Total tokens is too high, total tokens: 12066
+
+2024-05-03 10:40:43,580 - sentient-sims - ERROR - Total tokens is too high, total tokens: 11156
+2024-05-03 10:40:43,581 - sentient-sims - ERROR - Total tokens is too high, total tokens: 11156
+2024-05-03 10:40:43,581 - sentient-sims - ERROR - Traceback (most recent call last):
+  File "/home/guspuffy/projects/sentient-sims-llm-exllama/sentient_sims_api.py", line 63, in get_prompt_value
+    output = generator.generate(prompt=prompt, max_new_tokens=max_new_tokens)
+  File "/home/guspuffy/projects/sentient-sims-llm-exllama/sentient_sims_generator.py", line 88, in generate
+    raise TooManyTokensError(message)
+sentient_sims_generator.TooManyTokensError: Total tokens is too high, total tokens: 11156
+
+2024-05-03 10:45:47,520 - sentient-sims - INFO - 47.36 tk/s in 1.92 seconds
+2024-05-03 10:45:53,260 - sentient-sims - INFO - 46.4 tk/s in 1.94 seconds
+2024-05-03 10:46:01,236 - sentient-sims - INFO - 31.91 tk/s in 2.85 seconds
+2024-05-03 10:46:10,310 - sentient-sims - ERROR - Total tokens is too high, total tokens: 8690
+2024-05-03 10:46:10,310 - sentient-sims - ERROR - Total tokens is too high, total tokens: 8690
+2024-05-03 10:46:10,311 - sentient-sims - ERROR - Traceback (most recent call last):
+  File "/home/guspuffy/projects/sentient-sims-llm-exllama/sentient_sims_api.py", line 63, in get_prompt_value
+    output = generator.generate(prompt=prompt, max_new_tokens=max_new_tokens)
+  File "/home/guspuffy/projects/sentient-sims-llm-exllama/sentient_sims_generator.py", line 88, in generate
+    raise TooManyTokensError(message)
+sentient_sims_generator.TooManyTokensError: Total tokens is too high, total tokens: 8690
+
+2024-05-03 12:48:03,612 - sentient-sims - INFO - Starting worker: enterprise2, type: NVIDIA GeForce RTX 3090, model: mythomax-L2-13b
+2024-05-03 12:48:03,612 - sentient-sims - INFO - Starting grpc client
+2024-05-03 12:48:03,612 - sentient-sims - INFO - Starting API Server
+2024-05-03 12:48:03,612 - sentient-sims - INFO - Listening on localhost on port 5001
+2024-05-03 12:48:03,615 - sentient-sims - INFO - Connected to the server
+2024-05-03 12:48:33,732 - sentient-sims - INFO - 24.07 tk/s in 4.16 seconds
+2024-05-03 12:48:33,763 - sentient-sims - DEBUG - done with request
+2024-05-03 12:49:26,406 - sentient-sims - INFO - 32.0 tk/s in 3.13 seconds
+2024-05-03 12:49:26,437 - sentient-sims - DEBUG - done with request

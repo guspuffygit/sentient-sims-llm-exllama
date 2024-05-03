@@ -2,6 +2,7 @@ import traceback
 import argparse
 from flask import Flask, request, jsonify
 from waitress import serve
+from sentient_sims_logger import ss_logger
 
 from sentient_sims_generator import SentientSimsGenerator
 
@@ -70,20 +71,20 @@ def get_prompt_value():
         })
     except Exception as e:
         message = str(e)
-        print(message)
-        print(traceback.format_exc())
+        ss_logger.error(message)
+        ss_logger.error(traceback.format_exc())
         return jsonify({'error': message}), 500
 
-print(f"Starting worker: {worker_name}, type: {generator.get_gpu_name()}, model: {generator.get_model_name()}")
+ss_logger.info(f"Starting worker: {worker_name}, type: {generator.get_gpu_name()}, model: {generator.get_model_name()}")
 
 def startApi(listen: bool):
-    print('Starting API Server')
+    ss_logger.info('Starting API Server')
 
     if listen:
-        print(f'Listening on local network on port {port}')
+        ss_logger.info(f'Listening on local network on port {port}')
         serve(app=app, host="0.0.0.0", port=port)
     else:
-        print(f'Listening on localhost on port {port}')
+        ss_logger.info(f'Listening on localhost on port {port}')
         serve(app=app, port=port)
 
 if __name__ == '__main__':

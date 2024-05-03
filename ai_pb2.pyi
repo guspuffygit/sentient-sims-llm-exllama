@@ -31,12 +31,14 @@ class WorkRequest(_message.Message):
     def __init__(self, task: _Optional[str] = ..., taskid: _Optional[str] = ...) -> None: ...
 
 class WorkResponse(_message.Message):
-    __slots__ = ("text", "taskid")
+    __slots__ = ("text", "taskid", "error")
     TEXT_FIELD_NUMBER: _ClassVar[int]
     TASKID_FIELD_NUMBER: _ClassVar[int]
+    ERROR_FIELD_NUMBER: _ClassVar[int]
     text: str
     taskid: str
-    def __init__(self, text: _Optional[str] = ..., taskid: _Optional[str] = ...) -> None: ...
+    error: str
+    def __init__(self, text: _Optional[str] = ..., taskid: _Optional[str] = ..., error: _Optional[str] = ...) -> None: ...
 
 class WorkResponseAck(_message.Message):
     __slots__ = ()

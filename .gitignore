@@ -1,3 +1,4 @@
 # ignore __pycache__ folder
 __pycache__/
 sentient-simulations-grpc*
+nohup.out

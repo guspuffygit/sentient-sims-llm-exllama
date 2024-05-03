@@ -8,6 +8,7 @@ import torch
 from generator import ExLlamaGenerator
 from model import ExLlama, ExLlamaCache, ExLlamaConfig
 from tokenizer import ExLlamaTokenizer
+from sentient_sims_logger import ss_logger
 
 
 class TooManyTokensError(Exception):
@@ -83,7 +84,7 @@ class SentientSimsGenerator:
             total_tokens = self.tokenizer.num_tokens(prompt)
             if total_tokens > (self.config.max_seq_len - max_new_tokens):
                 message = f"Total tokens is too high, total tokens: {total_tokens}"
-                print(message)
+                ss_logger.error(message)
                 raise TooManyTokensError(message)
 
             output = self.generator.generate_simple(prompt, max_new_tokens)
@@ -92,6 +93,6 @@ class SentientSimsGenerator:
             elapsed_time = time.time() - start_time
             output_tokens = self.tokenizer.num_tokens(formatted_output)
             tokens_per_second = output_tokens / elapsed_time
-            print(f"{round(tokens_per_second, 2)} tk/s in {round(elapsed_time, 2)} seconds")
+            ss_logger.info(f"{round(tokens_per_second, 2)} tk/s in {round(elapsed_time, 2)} seconds")
 
             return formatted_output
