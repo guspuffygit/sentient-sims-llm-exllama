@@ -2,3 +2,4 @@
 __pycache__/
 sentient-simulations-grpc*
 nohup.out
+*.log
